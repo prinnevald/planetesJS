@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+
+<canvas id="canvas" width="1400" height="900"></canvas>
+
+<script>
+    const space = new Image();
+    const sun = new Image();
+    const earth = new Image();
+    const mercury = new Image();
+    const venus = new Image();
+    const mars = new Image();
+    const jupiter = new Image();
+    const saturn = new Image();
+    const uranus = new Image();
+    const neptune = new Image();
+
+    const WIDTH = 1400;
+    const HEIGHT = 900;
+
+    // hello. Made by Dnislam Urazayev CSE 2205M
+
+    function init() {
+        sun.src = "planet/soleil.png";
+        earth.src = "planet/terre.png";
+        mercury.src = "planet/mercure.png";
+        venus.src = "planet/venus.png";
+        mars.src = "planet/mars.png";
+        jupiter.src = "planet/jupiter.png";
+        saturn.src = "planet/saturne.png";
+        uranus.src = "planet/uranus.png";
+        neptune.src = "planet/neptune.png";
+
+        space.src = "space.jpeg";
+        window.requestAnimationFrame(draw);
+    }
+
+    function draw() {
+        const ctx = document.getElementById("canvas").getContext("2d");
+
+        ctx.globalCompositeOperation = "destination-over";
+        ctx.clearRect(0, 0, WIDTH, HEIGHT); // clear canvas
+
+        ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+        ctx.save();        
+        ctx.translate(WIDTH / 2, HEIGHT / 2);
+
+        const time = new Date();
+
+        // Mercury
+        ctx.rotate(
+            ((2 * Math.PI) / 60) * time.getSeconds() +
+            ((2 * Math.PI) / 60000) * time.getMilliseconds()
+        );
+        ctx.translate(60, 0);
+        ctx.fillRect(-8, -16, 40, 16); // Shadow
+        ctx.drawImage(mercury, -16, -16, 16, 16);
+        ctx.translate(-60, 0);
+
+
+        // Venus
+        ctx.save();
+        ctx.restore();
+        
+        ctx.rotate(
+            ((2 * Math.PI) / 60) * time.getSeconds() +
+            ((2 * Math.PI) / 60000) * time.getMilliseconds()
+        );
+        ctx.translate(100, 0);
+        ctx.fillRect(-8, -16, 40, 16); // Shadow
+        ctx.drawImage(venus, -16, -16, 16, 16);
+        ctx.translate(-100, 0);
+
+
+        // Earth
+        ctx.save();
+        ctx.restore();
+
+        ctx.rotate(
+            ((2 * Math.PI) / 60) * time.getSeconds() +
+            ((2 * Math.PI) / 60000) * time.getMilliseconds()
+        );
+        ctx.translate(140, 0);
+        ctx.fillRect(0, -16, 40, 32); // Shadow
+        ctx.drawImage(earth, -16, -16);
+        ctx.translate(-140, 0);
+
+
+        // Mars
+        ctx.save();
+        ctx.restore();
+
+        ctx.rotate(
+            ((2 * Math.PI) / 60) * time.getSeconds() +
+            ((2 * Math.PI) / 60000) * time.getMilliseconds()
+        );
+        ctx.translate(200, 0);
+        ctx.fillRect(-8, -16, 40, 16); // Shadow
+        ctx.drawImage(mars, -16, -16, 16, 16);
+        ctx.translate(-200, 0);
+      
+      
+        // Jupyter
+        ctx.save();
+        ctx.restore();
+
+        ctx.rotate(
+            ((2 * Math.PI) / 60) * time.getSeconds() +
+            ((2 * Math.PI) / 60000) * time.getMilliseconds()
+        );
+        ctx.translate(240, 0);
+        ctx.fillRect(8, -16, 48, 48); // Shadow
+        ctx.drawImage(jupiter, -16, -16, 48, 48);
+        ctx.translate(-240, 0);
+
+
+        // Saturn
+        ctx.save();
+        ctx.restore();
+
+        ctx.rotate(
+            ((2 * Math.PI) / 60) * time.getSeconds() +
+            ((2 * Math.PI) / 60000) * time.getMilliseconds()
+        );
+        ctx.translate(300, 0);
+        ctx.fillRect(8, -16, 48, 48); // Shadow
+        ctx.drawImage(saturn, -16, -16, 48, 48);
+        ctx.translate(-300, 0);
+
+
+        // Uranus
+        ctx.save();
+        ctx.restore();
+
+        ctx.rotate(
+            ((2 * Math.PI) / 60) * time.getSeconds() +
+            ((2 * Math.PI) / 60000) * time.getMilliseconds()
+        );
+        ctx.translate(360, 0);
+        ctx.fillRect(-8, -16, 40, 16); // Shadow
+        ctx.drawImage(uranus, -16, -16, 16, 16);
+        ctx.translate(-360, 0);
+
+
+        // Neptune
+        ctx.save();
+        ctx.restore();
+
+        ctx.rotate(
+            ((2 * Math.PI) / 60) * time.getSeconds() +
+            ((2 * Math.PI) / 60000) * time.getMilliseconds()
+        );
+        ctx.translate(400, 0);
+        ctx.fillRect(-8, -16, 40, 16); // Shadow
+        ctx.drawImage(neptune, -16, -16, 16, 16);
+        ctx.translate(-400, 0);
+
+      
+        ctx.restore();
+        ctx.drawImage(sun, WIDTH / 2 - 25, HEIGHT / 2 - 25, 50, 50);
+        ctx.drawImage(space, 0, 0);
+
+
+        window.requestAnimationFrame(draw);
+    }
+
+    init();
+
+</script>
