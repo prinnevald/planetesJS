@@ -40,10 +40,45 @@
         ctx.globalCompositeOperation = "destination-over";
         ctx.clearRect(0, 0, WIDTH, HEIGHT); // clear canvas
 
-        ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+
+		ctx.font = "15px Arial";
+
         ctx.save();        
         ctx.translate(WIDTH / 2, HEIGHT / 2);
 
+ 		ctx.strokeStyle = "#FF0000";
+		ctx.beginPath();
+		ctx.arc(0, 0, 52, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.arc(0, 0, 92, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.arc(0, 0, 142, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.arc(0, 0, 190, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.arc(0, 0, 250, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.arc(0, 0, 310, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.arc(0, 0, 352, 0, 2 * Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(0, 0, 392, 0, 2 * Math.PI);
+		ctx.stroke();
+		
         const time = new Date();
 
         // Mercury
@@ -52,10 +87,12 @@
             ((2 * Math.PI) / 60000) * time.getMilliseconds()
         );
         ctx.translate(60, 0);
+		ctx.fillStyle = "lime";
+		ctx.fillText("Mercury", 0, 0); 
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(-8, -16, 40, 16); // Shadow
         ctx.drawImage(mercury, -16, -16, 16, 16);
         ctx.translate(-60, 0);
-
 
         // Venus
         ctx.save();
@@ -66,6 +103,9 @@
             ((2 * Math.PI) / 60000) * time.getMilliseconds()
         );
         ctx.translate(100, 0);
+		ctx.fillStyle = "lime";
+		ctx.fillText("Venus", 0, 0); 
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(-8, -16, 40, 16); // Shadow
         ctx.drawImage(venus, -16, -16, 16, 16);
         ctx.translate(-100, 0);
@@ -80,6 +120,9 @@
             ((2 * Math.PI) / 60000) * time.getMilliseconds()
         );
         ctx.translate(140, 0);
+		ctx.fillStyle = "lime";
+		ctx.fillText("Earth", 0, 0); 
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(0, -16, 40, 32); // Shadow
         ctx.drawImage(earth, -16, -16);
         ctx.translate(-140, 0);
@@ -94,6 +137,9 @@
             ((2 * Math.PI) / 60000) * time.getMilliseconds()
         );
         ctx.translate(200, 0);
+		ctx.fillStyle = "lime";
+		ctx.fillText("Mars", 0, 0); 
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(-8, -16, 40, 16); // Shadow
         ctx.drawImage(mars, -16, -16, 16, 16);
         ctx.translate(-200, 0);
@@ -108,6 +154,9 @@
             ((2 * Math.PI) / 60000) * time.getMilliseconds()
         );
         ctx.translate(240, 0);
+		ctx.fillStyle = "lime";
+		ctx.fillText("Jupyter", 0, 0); 
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(8, -16, 48, 48); // Shadow
         ctx.drawImage(jupiter, -16, -16, 48, 48);
         ctx.translate(-240, 0);
@@ -122,6 +171,9 @@
             ((2 * Math.PI) / 60000) * time.getMilliseconds()
         );
         ctx.translate(300, 0);
+		ctx.fillStyle = "lime";
+		ctx.fillText("Saturn", 0, 0); 
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(8, -16, 48, 48); // Shadow
         ctx.drawImage(saturn, -16, -16, 48, 48);
         ctx.translate(-300, 0);
@@ -136,6 +188,9 @@
             ((2 * Math.PI) / 60000) * time.getMilliseconds()
         );
         ctx.translate(360, 0);
+		ctx.fillStyle = "lime";
+		ctx.fillText("Uranus", 0, 0); 
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(-8, -16, 40, 16); // Shadow
         ctx.drawImage(uranus, -16, -16, 16, 16);
         ctx.translate(-360, 0);
@@ -150,6 +205,9 @@
             ((2 * Math.PI) / 60000) * time.getMilliseconds()
         );
         ctx.translate(400, 0);
+		ctx.fillStyle = "lime";
+		ctx.fillText("Neptune", 0, 0); 
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(-8, -16, 40, 16); // Shadow
         ctx.drawImage(neptune, -16, -16, 16, 16);
         ctx.translate(-400, 0);
